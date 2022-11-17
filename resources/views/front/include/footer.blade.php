@@ -12,9 +12,9 @@
         <div class="row footer-content d-flex justify-content-evenly">
             <!--  footer left  -->
             <div class="footer-news col-lg-3 col-lg-3 col-md-4  rounded-2">
-                <form action="#">
+                <form>
                     <div class="mb-5 mt-5 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-light">
+                        <button type="submit" class="btn btn-light" disabled>
                             عضویت در خبرنامه
                         </button>
                     </div>
