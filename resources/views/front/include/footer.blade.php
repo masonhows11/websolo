@@ -53,19 +53,19 @@
                     <div class="contact-us-links mt-4 col-lg-6 col-md-6  d-flex justify-content-center  align-items-center align-content-center">
                         <div class="contact-us-links-content px-2">
                             <div class="instagram contact-link d-flex flex-row">
-                                <span class="text-white me-4">webkadeh_official</span>
+                                <span class="text-white me-4">websolo_official..unavailable</span>
                                 <i class="fab fa-instagram"></i>
                             </div>
                             <div class="telegram contact-link d-flex flex-row">
-                                <span class="text-white me-4">@webkadeh</span>
+                                <span class="text-white me-4">@websolo..unavailable</span>
                                 <i class="fab fa-telegram"></i>
                             </div>
                             <div class="whatsapp contact-link d-flex flex-row">
-                                <span class="text-white me-4" dir="rtl">0912 123 4567</span>
+                                <span class="text-white me-4" dir="rtl">0991 723 0927</span>
                                 <i class="fab fa-whatsapp"></i>
                             </div>
                             <div class="phone contact-link d-flex flex-row">
-                                <span class="text-white me-4" dir="rtl">0912 123 4567</span>
+                                <span class="text-white me-4" dir="rtl">0917 289 0423</span>
                                 <i class="fas fa-phone "></i>
                             </div>
                         </div>
