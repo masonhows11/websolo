@@ -13,7 +13,8 @@
 
         <div class="row validate-mobile-admin-form">
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
-                <img alt="Logo" src="{{ asset('images/logo-svg.svg') }}" class="logo-login my-5"/>
+              {{--  <img alt="Logo" src="#" class="logo-login my-5"/>--}}
+                <h3 class="logo-login my-5">وب سولو</h3>
                 <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
                     <form action="{{ route('validateMobile') }}" method="post" class="form w-100" novalidate="novalidate" id="kt_sign_in_form">
                         @csrf
@@ -63,25 +64,20 @@
 @endsection
 @push('custom_scripts')
     <script>
-
-
         let counter = 0;
         let remainingSeconds = 0;
         let timer = document.getElementById('timer');
         let resend = document.getElementById('resend_token');
         let timerInterval;
-
         function displayTime(s) {
             let min = Math.floor(s / 60);
             let sec = s % 60;
             return min.toString().padStart(2, "0") + ':' + sec.toString().padStart(2, "0");
         }
-
         // default timer div element display in none
         timer.style.display = 'none';
         // for display timer in timer div element
         timer.innerHTML = (displayTime(remainingSeconds - counter)).toString();
-
         function startTimer() {
             resend.style.display = 'none';
             timer.style.display = 'block';

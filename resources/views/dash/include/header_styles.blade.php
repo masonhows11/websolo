@@ -5,6 +5,6 @@
 <link rel="stylesheet" href="{{ asset('assets/ijaboCropTool/ijaboCropTool.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/dash/plugins/chosen/chosen.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/dash/css/admin_custom.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/dash/css/admin_custom_min.css') }}">
 
 

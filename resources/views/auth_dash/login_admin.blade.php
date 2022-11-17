@@ -10,10 +10,10 @@
                 @include('auth_dash.alert')
             </div>
         </div>
-
         <div class="row">
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
-                <img alt="Logo" src="{{ asset('images/logo-svg.svg') }}" class="logo-login my-5"/>
+{{--                <img alt="Logo" src="#" class="logo-login my-5"/>--}}
+                <h3 class="logo-login my-5">وب سولو</h3>
                 <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
 
                     <form action="{{ route('adminLogin') }}" method="post" class="form w-100" novalidate="novalidate"

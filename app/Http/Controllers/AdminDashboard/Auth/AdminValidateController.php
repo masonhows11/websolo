@@ -38,7 +38,7 @@ class AdminValidateController extends Controller
             Auth::guard('admin')->login($admin,$request->remember);
 
             $request->session()->forget('admin_mobile');
-            return redirect()->route('admin.dashboardAdmin');
+            return redirect()->route('admin.dashboard');
         }
         return view('auth_dash.login_admin');
 
