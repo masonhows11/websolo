@@ -55,7 +55,7 @@ class AdminAuthNotification extends Notification
     public function toRayganSms($notifiable)
     {
         return (new TextMessage)
-            ->content(" وبکده - کد فعال سازی:" . $this->admin->token);
+            ->content(" وب سولو - کد فعال سازی:" . $this->admin->token);
     }
 
     /**

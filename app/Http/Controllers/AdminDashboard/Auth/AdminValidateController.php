@@ -15,7 +15,6 @@ class AdminValidateController extends Controller
     //
     public function validateMobileForm()
     {
-
         return view('auth_dash.validate_token');
     }
 
@@ -23,20 +22,19 @@ class AdminValidateController extends Controller
     {
         // return $request;
         $request->validate([
-            'token' => ['required','numeric','digits:6']
+            'token' => ['required', 'numeric', 'digits:6']
         ], $messages = [
             'token.required' => 'کد فعال سازی را وارد کنید.',
             'token.numeric' => 'مقدار وارد شذه معتبر نمی باشد.',
             'token.digits' => 'کد فعال سازی معتبر نمی باشد.',
         ]);
-        $validated = CheckExpireToken::checkAdminToken($request->token,$request->mobile);
+        $validated = CheckExpireToken::checkAdminToken($request->token, $request->mobile);
         if ($validated == false) {
             return redirect()->route('adminLoginForm')
                 ->with(['error' => 'کد فعال سازی معتبر نمی باشد']);
         }
         if ($admin = Admin::where(['mobile' => $request->mobile, 'token' => $request->token])->first()) {
-            Auth::guard('admin')->login($admin,$request->remember);
-
+            Auth::guard('admin')->login($admin, $request->remember);
             $request->session()->forget('admin_mobile');
             return redirect()->route('admin.dashboard');
         }
@@ -47,15 +45,15 @@ class AdminValidateController extends Controller
 
     public function resendToken(Request $request)
     {
-
         try {
             $admin = Admin::where('mobile', $request->number)->first();
             $token = GenerateToken::generateToken();
             $admin->token = $token;
             $admin->save();
-            //  $admin->notify(new AdminAuthNotification($admin));
+            // for send code via sms
+            $admin->notify(new AdminAuthNotification($admin));
             return response()->json(['success' => 'کد فعال سازی مجددا ارسال شد.', 'status' => 200], 200);
-        }catch (\Exception $ex){
+        } catch (\Exception $ex) {
             return response()->json(['exception' => $ex->getMessage(), 'status' => 500], 500);
         }
 

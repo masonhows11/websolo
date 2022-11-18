@@ -19,7 +19,7 @@ class AdminAuthController extends Controller
 
     public function loginAdmin(Request $request)
     {
-
+        // return $request;
         $request->validate([
             'mobile' => ['required', 'exists:admins', new MobileValidationRule()],
         ], $messages = [
@@ -34,7 +34,8 @@ class AdminAuthController extends Controller
             $admin->token = $token;
             $admin->save();
             session(['admin_mobile' => $admin->mobile]);
-            // $admin->notify(new AdminAuthNotification($admin));
+            // for send code via sms
+            $admin->notify(new AdminAuthNotification($admin));
             $request->session()
                 ->flash('success', 'کد فعال سازی به شماره موبایل ارسال شد.');
             return redirect()->route('validateMobileForm');

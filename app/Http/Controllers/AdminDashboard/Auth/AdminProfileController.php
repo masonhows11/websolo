@@ -113,7 +113,8 @@ class AdminProfileController extends Controller
             $admin->remember_token = null;
             $admin->save();
             session(['admin_mobile' => $admin->mobile]);
-            //  $admin->notify(new AdminAuthNotification($admin));
+            // for send code via sms
+            $admin->notify(new AdminAuthNotification($admin));
             $request->session()->flash('success', 'کد فعال سازی به شماره موبایل ارسال شد.');
             return redirect()->route('validateMobileForm');
         } catch (\Exception $ex) {
