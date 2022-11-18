@@ -27,6 +27,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-10 user-profile-menu mt-4 rounded-2">
                     <ul class="mx-2 my-3">
                         <li class=""><i class="fa fa-home-user me-3"></i><a href="{{ route('dashboard') }}">اطلاعات کاربری</a></li>
@@ -39,7 +40,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-6 col-xs-6 info_dash_left_side  rounded-2 mb-5">
+            <div class="col-lg-9 col-md-6 col-xs-6 info_dash_left_side  rounded-2 my-4">
                 @yield('info_dash_left_side')
             </div>
         </div>
