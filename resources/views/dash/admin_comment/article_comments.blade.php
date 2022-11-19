@@ -53,7 +53,7 @@
                                                     <button type="button" data-comment="{{ $comment->id }}"
                                                             class="btn {{ $comment->approved === 0 ? 'btn-danger' : 'btn-success' }}  btn-sm"
                                                             id="approved_comment">
-                                                        {{ $comment->approved === 0 ? 'تایید نشده' : 'تایید شده' }}
+                                                        {{ $comment->approved === 0 ? __('messages.not_confirmed') : __('messages.confirmed') }}
                                                     </button>
                                                 </div>
                                             </div>
