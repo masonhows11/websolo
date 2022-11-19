@@ -71,7 +71,7 @@ class UserDashboardController extends Controller
         $file = $request->file('avatarFile');
         $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
         /// upload files to server
-        $move = $file->move(public_path($dest), $image_name_save);
+       // $move = $file->move(public_path($dest), $image_name_save);
 
         if (!$move) {
             return response()->json(['status' => 0, 'msg' => 'ذخیره سازی عکس موفقیت آمیز نبود.']);
