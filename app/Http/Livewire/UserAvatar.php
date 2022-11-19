@@ -35,6 +35,7 @@ class UserAvatar extends Component
 
     public function render()
     {
-        return view('livewire.user-avatar');
+        return view('livewire.user-avatar')
+            ->with(['user'=>Auth::user()]);
     }
 }
