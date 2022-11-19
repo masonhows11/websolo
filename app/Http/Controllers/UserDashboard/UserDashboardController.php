@@ -68,17 +68,16 @@ class UserDashboardController extends Controller
 
     public function storeAvatar(Request $request)
     {
-
         // name image
         $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
         // store in given path
-        $store = $request->file('avatarFile')->storeAs('users', $image_name_save,'public');
+        $store = $request->file('avatarFile')->storeAs('users', $image_name_save, 'public');
         if (!$store) {
             return response()->json(['status' => 0, 'msg' => 'ذخیره سازی عکس موفقیت آمیز نبود.']);
         } else {
             // delete old image if exists
-           $user = User::findOrFail(Auth::id());
-            if ( $user->image_path != null) {
+            $user = User::findOrFail(Auth::id());
+            if ($user->image_path != null) {
                 if (Storage::disk('public')->exists('users/' . $user->image_path)) {
                     Storage::disk('public')->delete('users/' . $user->image_path);
                 }
