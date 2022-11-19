@@ -77,7 +77,7 @@ Route::middleware(['web','auth','verifyUser'])->group(function () {
 
   Route::get('/editProfile',[UserDashboardController::class,'editProfile'])->name('editProfile');
   Route::post('/updateProfile',[UserDashboardController::class,'updateProfile'])->name('updateProfile');
-  
+
   Route::get('/editEmailForm',[EditEmailController::class,'editEmailForm'])->name('editEmailForm');
   Route::post('/editEmail',[EditEmailController::class,'editEmail'])->name('editEmail');
   Route::get('/verifyEditEmail/{$id}{$code}',[EditEmailController::class,'verifyEditEmail'])->name('verifyEditEmail');

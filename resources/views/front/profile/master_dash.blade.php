@@ -29,24 +29,3 @@
         </div>
     </div>
 @endsection
-
-@push('front_custom_scripts')
-    <script>
-        $('#avatarFile').ijaboCropTool({
-            preview : '.avatar-previewer',
-            setRatio:1,
-            allowedExtensions: ['jpg', 'jpeg','png'],
-            buttonsText:['CROP','QUIT'],
-            buttonsColor:['#30bf7d','#ee5155', -15],
-            processUrl:'{{ route("storeAvatar") }}',
-            withCSRF:['_token','{{ csrf_token() }}'],
-            onSuccess:function(message, element, status){
-                alert(message);
-            },
-            onError:function(message, element, status){
-                alert(message);
-            }
-        });
-
-    </script>
-@endpush
