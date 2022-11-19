@@ -7,25 +7,8 @@
 
                 <div class="col-lg-10 d-flex justify-content-center user-image-profile rounded-2">
 
-                    <div class="col-lg-6 user-avatar d-flex flex-column justify-content-center ">
-                        <div class="user-img">
-                            @php
-                            $user = \Illuminate\Support\Facades\Auth::user();
-                            @endphp
-                            <img src="{{ $user->image_path ?  asset('storage/users/'.$user->image_path)  : asset('images/users/no-image-icon-23494.png') }}"
-                                 class="rounded avatar-previewer" alt="">
-                        </div>
-                        <div class="user-name">
-                            <p class="text-center">{{ $user->name }}</p>
-                            <p class="text-center">{{ $user->first_name }} {{ $user->last_name }} </p>
-                        </div>
-                        <div class="d-flex my-2 userAvatarFile justify-content-center">
-                            <label for="avatarFile">
-                                آپلود عکس
-                                <input type="file" class="btn btn-info" name="avatarFile" id="avatarFile">
-                            </label>
-                        </div>
-                    </div>
+                    <livewire:user-avatar/>
+
                 </div>
 
                 <div class="col-lg-10 user-profile-menu mt-4 rounded-2">

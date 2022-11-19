@@ -48,7 +48,6 @@ class UserDashboardController extends Controller
             'last_name.min' => 'حداقل ۴ کاراکتر.',
             'last_name.max' => 'حداکثر ۲۰ کاراکتر باشد.',
         ]);
-
         try {
 
             $affected = DB::table('users')
@@ -62,34 +61,7 @@ class UserDashboardController extends Controller
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
-
-
     }
 
-    public function storeAvatar(Request $request)
-    {
-       
-        // name image
-        $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
-        // store in given path
-        $request->file('avatarFile')->storeAs('users', $image_name_save,'public');
 
-        // delete old image if exists
-        $user = User::findOrFail(Auth::id());
-        if ( $user->image_path != null) {
-            if (Storage::disk('public')->exists('users/' . $user->image_path)) {
-                Storage::disk('public')->delete('users/' . $user->image_path);
-            }
-        }
-        User::where('id', Auth::id())
-            ->update(['image_path' => $image_name_save]);
-        return response()
-            ->json(['status' => 1, 'msg' => 'ذخیره سازی عکس با موفقیت انجام شد.', 'name' => $image_name_save]);
-
-       /* if (!$store) {
-            return response()->json(['status' => 0, 'msg' => 'ذخیره سازی عکس موفقیت آمیز نبود.']);
-        } else {
-
-        }*/
-    }
 }

@@ -6,7 +6,6 @@
     <title>@yield('page_title')</title>
     <link rel="icon" type="image/x-icon" href="#">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('assets/ijaboCropTool/ijaboCropTool.min.css') }}">
     @include('front.include.header_styles')
     @livewireStyles
 </head>
@@ -25,7 +24,6 @@
 @livewireScripts
 
 @include('front.include.footer_scripts')
-<script src="{{ asset('assets/ijaboCropTool/ijaboCropTool.min.js') }}"></script>
 <!-- custom scripts -->
 @stack('front_custom_scripts')
 </body>
