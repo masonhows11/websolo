@@ -12,7 +12,7 @@
                             @php
                             $user = \Illuminate\Support\Facades\Auth::user();
                             @endphp
-                            <img src="{{ $user->image_path ?  asset('images/users/'.$user->image_path)  : asset('images/users/no-image-icon-23494.png') }}"
+                            <img src="{{ $user->image_path ?  asset('storage/users/'.$user->image_path)  : asset('images/users/no-image-icon-23494.png') }}"
                                  class="rounded avatar-previewer" alt="">
                         </div>
                         <div class="user-name">

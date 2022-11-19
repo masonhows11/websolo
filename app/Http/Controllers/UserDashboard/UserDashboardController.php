@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class UserDashboardController extends Controller
@@ -67,23 +68,25 @@ class UserDashboardController extends Controller
 
     public function storeAvatar(Request $request)
     {
-        $dest = 'images/users/';
-        $file = $request->file('avatarFile');
-        $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
-        /// upload files to server
-       // $move = $file->move(public_path($dest), $image_name_save);
 
-        if (!$move) {
+        // name image
+        $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
+        // store in given path
+        $store = $request->file('avatarFile')->storeAs('users', $image_name_save,'public');
+        if (!$store) {
             return response()->json(['status' => 0, 'msg' => 'ذخیره سازی عکس موفقیت آمیز نبود.']);
         } else {
             // delete old image if exists
-            $user = User::find(Auth::id());
-            $user_avatar = $user->image_path;
-            if ($user_avatar != null) {
-                unlink($dest . $user_avatar);
+           $user = User::findOrFail(Auth::id());
+            if ( $user->image_path != null) {
+                if (Storage::disk('public')->exists('users/' . $user->image_path)) {
+                    Storage::disk('public')->delete('users/' . $user->image_path);
+                }
             }
-            User::where('id', Auth::id())->update(['image_path' => $image_name_save]);
-            return response()->json(['status' => 1, 'msg' => 'ذخیره سازی عکس با موفقیت انجام شد.', 'name' => $image_name_save]);
+            User::where('id', Auth::id())
+                ->update(['image_path' => $image_name_save]);
+            return response()
+                ->json(['status' => 1, 'msg' => 'ذخیره سازی عکس با موفقیت انجام شد.', 'name' => $image_name_save]);
         }
     }
 }
