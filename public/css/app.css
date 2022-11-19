@@ -10956,6 +10956,7 @@ body {
   cursor: pointer;
   border: 2px #ff6347 solid;
   border-radius: 5px;
+  padding: 4px;
 }
 
 .userAvatarFile label:hover {
