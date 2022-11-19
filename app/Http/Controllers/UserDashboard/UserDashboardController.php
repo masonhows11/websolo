@@ -68,6 +68,7 @@ class UserDashboardController extends Controller
 
     public function storeAvatar(Request $request)
     {
+       
         // name image
         $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
         // store in given path
