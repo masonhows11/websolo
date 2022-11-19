@@ -17,8 +17,27 @@ class UserAvatar extends Component
 
     }
 
+    protected $rules =
+    [
+        'avatar' => ['mimes:png,jpg,jpeg','image','max:1999','dimensions:min_width=500,min_height=500'],
+    ];
+
+    protected $messages =
+    [
+        'avatar.mimes' => 'فایل انتخاب شده معتبر نمی باشد',
+        'avatar.image' => 'فایل انتخاب شده معتبر نمی باشد',
+        'avatar.max' => 'حداکثز حجم فایل ۲ مگابایت',
+        'avatar.min_width' => 'حداقل عرض تصویر ۵۰۰ پیکسل',
+        'avatar.max_height' => 'حداقل ارتفاع تصویر ۵۰۰ پیکسل',
+    ];
+
+
     public function save()
     {
+
+        $this->validate([
+
+        ]);
         $image_name_save = 'UIMG' . date('YmdHis') . uniqid('', true) . '.jpg';
         $this->avatar->storeAs('users', $image_name_save,'public');
 

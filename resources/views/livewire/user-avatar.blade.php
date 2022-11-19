@@ -17,6 +17,11 @@
                     آپلود عکس
                     <input type="file" class="btn btn-info" name="avatarFile" wire:model="avatar">
                 </label>
+                @error('avatar')
+                <span class="alert alert-danger">
+                    {{ $message }}
+                </span>
+                @enderror
             </form>
         </div>
 
