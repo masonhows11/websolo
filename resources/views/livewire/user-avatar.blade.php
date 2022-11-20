@@ -4,7 +4,7 @@
         <form wire:submit.prevent="save">
             <div class="user-img mt-2 d-flex justify-content-center">
                 @if($avatar)
-                    <img src="{{ $avatar->temporaryUrl() }}" alt="">
+                    <img src="{{ $avatar->temporaryUrl() }}" alt="user-avatar" class="rounded avatar-previewer">
                     @else
                     <img src="{{ $user->image_path ?  asset('storage/users/'.$user->image_path)  : asset('images/users/no-image-icon-23494.png') }}"
                          class="rounded avatar-previewer" alt="user-avatar">
