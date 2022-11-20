@@ -11287,6 +11287,9 @@ body {
 .social-link .social-link-item {
     margin: 5px 0 5px 0;
   }
+  .dash-index-info .info-value {
+    font-size: 0.8rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .nav-side li {
