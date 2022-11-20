@@ -10950,6 +10950,7 @@ body {
 
 .userAvatarFile input {
   display: block;
+  width: 200px;
 }
 
 .userAvatarFile button {
@@ -10960,9 +10961,6 @@ body {
   padding: 4px;
 }
 
-/*.userAvatarFile label:hover {
-    border: 2px #ff6347 solid;
-}*/
 /**************** about us section *****************/
 .intro-webkade .intro-webkade-title h1 {
   border-bottom: 3px solid #2196F3;

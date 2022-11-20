@@ -1,7 +1,7 @@
 @extends('front.include.master_auth')
 @section('main_content')
     <div class="container">
-        <div class="row row-cols-md-1 row-cols-lg-1 d-flex justify-content-around user-dashboard-section">
+        <div class="row row-cols-md-1 row-cols-lg-1  user-dashboard-section">
 
             <div class="col-lg-4 col-md-4 col-xs-4 col dash_menu_right_side d-flex flex-column">
 
