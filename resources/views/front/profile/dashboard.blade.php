@@ -13,7 +13,7 @@
             <div class="dash-index-info-title mt-5 py-2 px-3">
                 اطلاعات کاربر
             </div>
-            <div class="col-xl-10 my-4 dash-index-info">
+            <div class="col-xl-12 my-4 dash-index-info">
                 <div class="row my-3">
                     <div class="col-lg-6"> نام کاربری : {{ $user->name == null ? 'ثبت نشده' : $user->name }}</div>
                     <div class="col-lg-6"> آدرس ایمیل : {{ $user->email  == null ? 'ثبت نشده' : $user->email }}</div>
