@@ -17,14 +17,14 @@
         <form wire:submit.prevent="save">
 
 
-                <div class="my-2 text-center mx-auto">
+                <div class="my-3 text-center mx-auto">
                     <label for="avatarFile" class="text-center">
                         انتخاب عکس
                     </label>
                     <input type="file" class="" name="avatarFile" wire:model="avatar">
                 </div>
 
-                <div class="mx-auto  text-center my-2">
+                <div class="mx-auto  text-center my-3">
                     <button type="submit">آپلود عکس</button>
                 </div>
 

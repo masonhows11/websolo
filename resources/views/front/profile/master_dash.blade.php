@@ -1,16 +1,14 @@
 @extends('front.include.master_auth')
 @section('main_content')
     <div class="container">
-        <div class="row row-cols-xxl-2 row-cols-xl-2  row-cols-lg-1 row-cols-md-2  row-cols-1 user-dashboard-section">
+        <div class="row row-cols-xxl-2 row-cols-xl-2  row-cols-lg-1 row-cols-md-1  row-cols-1 user-dashboard-section">
 
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-xs-4 col dash_menu_right_side d-flex flex-column">
-
-                <div class="d-flex justify-content-center user-image-profile rounded-2">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-xs-4 col dash_menu_right_side">
+                <div class="col d-flex justify-content-center user-image-profile rounded-2">
                     <livewire:user-avatar/>
                 </div>
-
-                <div class="user-profile-menu mt-2 rounded-2">
-                    <ul class="mx-4 my-4">
+                <div class="col user-profile-menu mt-2 rounded-2">
+                    <ul class="mx-auto my-4">
                         <li class=""><i class="fa fa-home-user me-3"></i><a href="{{ route('dashboard') }}">اطلاعات کاربری</a></li>
                         <li class=""><i class="far fa-heart me-3"></i><a href="#">لیست علاقه مندی ها</a></li>
                         <li class=""><i class="far fa-message me-3"></i><a href="#">پیغام ها</a></li>
