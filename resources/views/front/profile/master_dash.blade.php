@@ -6,9 +6,7 @@
             <div class="col-lg-3 col-md-3 col-xs-4 dash_menu_right_side d-flex flex-column">
 
                 <div class="col-lg-10 d-flex justify-content-center user-image-profile rounded-2">
-
                     <livewire:user-avatar/>
-
                 </div>
 
                 <div class="col-lg-10 user-profile-menu mt-4 rounded-2">
