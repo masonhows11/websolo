@@ -11,15 +11,18 @@
             <p class="text-center">{{ $user->first_name }} {{ $user->last_name }} </p>
         </div>
 
-        <div class="d-flex justify-content-center my-2 userAvatarFile">
+
             <form wire:submit.prevent="save">
-                <div class="mx-2">
-                    <label for="avatarFile">
+                <div class="d-flex  flex-column my-2 userAvatarFile">
+
+                <div class="my-2 mx-auto" style="width: 100px">
+                    <label for="avatarFile" class="text-center">
                         انتخاب عکس
                     </label>
-                    <input type="file" class="btn" name="avatarFile" wire:model="avatar">
+                    <input type="file" class="" style="width: 100px;" name="avatarFile" wire:model="avatar">
                 </div>
-                <div class="mx-2">
+
+                <div class="mx-auto my-2">
                     <button type="submit">آپلود عکس</button>
                 </div>
 
@@ -28,8 +31,9 @@
                     {{ $message }}
                 </span>
                 @enderror
+                </div>
             </form>
-        </div>
+
 
     </div>
 </div>
