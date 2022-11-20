@@ -51,7 +51,7 @@
                 <a class="nav-link" href="{{ route('articleIndex') }}">مقالات</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('trainingIndex') }}">آمورش ها</a>
+                <a class="nav-link" href="{{ route('trainingIndex') }}">آموزش ها</a>
             </li>
         </ul>
         <ul class="navbar-nav header-down-item-left">
