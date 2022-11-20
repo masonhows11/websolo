@@ -13,10 +13,16 @@
 
         <div class="d-flex justify-content-center my-2 userAvatarFile">
             <form wire:submit.prevent="save">
-                <label for="avatarFile">
-                    آپلود عکس
-                    <input type="file" class="btn btn-info" name="avatarFile" wire:model="avatar">
-                </label>
+                <div class="mx-2">
+                    <label for="avatarFile">
+                        انتخاب عکس
+                    </label>
+                    <input type="file" class="btn" name="avatarFile" wire:model="avatar">
+                </div>
+                <div class="mx-2">
+                    <button type="submit">آپلود عکس</button>
+                </div>
+
                 @error('avatar')
                 <span class="alert alert-danger">
                     {{ $message }}

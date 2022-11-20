@@ -661,10 +661,11 @@ body {
 }
 
 .userAvatarFile input {
-    display: none;
+    display:block;
 }
 
-.userAvatarFile label {
+.userAvatarFile button {
+    background:transparent;
     cursor: pointer;
     border: 2px #ff6347 solid;
     border-radius: 5px;
@@ -672,9 +673,9 @@ body {
 
 }
 
-.userAvatarFile label:hover {
+/*.userAvatarFile label:hover {
     border: 2px #ff6347 solid;
-}
+}*/
 
 /**************** about us section *****************/
 .intro-webkade .intro-webkade-title h1 {
