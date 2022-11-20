@@ -21,7 +21,7 @@ class UserAvatar extends Component
 
     protected $rules =
         [
-            'avatar' => ['required','mimes:png,jpg,jpeg', 'image', 'max:1999', 'dimensions:min_width=500,min_height=500'],
+            'avatar' => ['required','mimes:png,jpg,jpeg', 'image', 'max:1999', 'dimensions:min_width=300,min_height=300'],
         ];
 
     protected $messages =

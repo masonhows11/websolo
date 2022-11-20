@@ -15,11 +15,11 @@
             <form wire:submit.prevent="save">
                 <div class="d-flex  flex-column my-2 userAvatarFile">
 
-                <div class="my-2 mx-auto" style="width: 100px">
+                <div class="my-2 mx-auto" >
                     <label for="avatarFile" class="text-center">
                         انتخاب عکس
                     </label>
-                    <input type="file" class="" style="width: 100px;" name="avatarFile" wire:model="avatar">
+                    <input type="file" class=""  name="avatarFile" wire:model="avatar">
                 </div>
 
                 <div class="mx-auto my-2">
